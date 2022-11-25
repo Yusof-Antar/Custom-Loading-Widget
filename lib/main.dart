@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
           child: SizedBox(
             height: 50,
@@ -57,7 +58,7 @@ class _CustomLoadingWidgetState extends State<CustomLoadingWidget> with SingleTi
         milliseconds: 800,
       ),
     );
-    _scaleAnimation = Tween<double>(begin: 2.0, end: 50.0).animate(
+    _scaleAnimation = Tween<double>(begin: 2, end: 50.0).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
 
@@ -68,7 +69,6 @@ class _CustomLoadingWidgetState extends State<CustomLoadingWidget> with SingleTi
         _animationController.forward();
       },
     );
-
     _animationController.addListener(() {
       if (_animationController.isCompleted) {
         _animationController.reverse();
